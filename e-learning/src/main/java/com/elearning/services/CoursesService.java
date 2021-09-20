@@ -14,7 +14,7 @@ public class CoursesService {
 	@Autowired
 	CoursesRepository courRep;
 	public List<Courses> findCourses(int user_id) {
-		List<Courses> coursesList=courRep.findByUserId(user_id);
+		List<Courses> coursesList=courRep.findByCourseId(user_id);
 		return coursesList;
 	}
 	public void addCourse(Courses course) {
@@ -23,6 +23,9 @@ public class CoursesService {
 	}
 	public Courses findCourse(int courseId) {
 		return courRep.findById(courseId).get();
+	}
+	public List<Courses> findAllCourses() {
+		return courRep.findAll();
 	}
 	
 

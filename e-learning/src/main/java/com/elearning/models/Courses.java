@@ -10,8 +10,7 @@ public class Courses {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int course_id;
-	private int userId;
+	private int courseId;
 	private String course_name;
 	private String course_resource;
 	private String course_desc;
@@ -21,9 +20,9 @@ public class Courses {
 		
 	}
 
-	public Courses(int userId, String course_name, String course_resource, String course_desc, String course_fee) {
+
+	public Courses(String course_name, String course_resource, String course_desc, String course_fee) {
 		super();
-		this.userId=userId;
 		this.course_name = course_name;
 		this.course_resource = course_resource;
 		this.course_desc = course_desc;
@@ -31,13 +30,26 @@ public class Courses {
 	}
 
 
-	public int getUserId() {
-		return userId;
+	public Courses(int courseId, String course_name, String course_resource, String course_desc, String course_fee) {
+		super();
+		this.courseId = courseId;
+		this.course_name = course_name;
+		this.course_resource = course_resource;
+		this.course_desc = course_desc;
+		this.course_fee = course_fee;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+
+
+	public int getCourseId() {
+		return courseId;
 	}
+
+
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
+	}
+
 
 	public String getCourse_name() {
 		return course_name;
@@ -70,6 +82,12 @@ public class Courses {
 	public void setCourse_fee(String course_fee) {
 		this.course_fee = course_fee;
 	}
-	
-	
+
+
+	@Override
+	public String toString() {
+		
+		return "ID:"+this.courseId+" | Name:"+this.course_name+" | Description:"+this.course_desc+" | :"+this.course_fee+" | Resource:"+this.course_resource;
+	}
+		
 }

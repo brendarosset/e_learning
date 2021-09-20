@@ -1,2 +1,3 @@
-Contact saved successfully!
-<a href="/contacts/${user_id}/${name}">Come back</a>
+Message sent!
+<br>
+<a href="/userMain/${user_id}">Come back</a>

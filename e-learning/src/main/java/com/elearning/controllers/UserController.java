@@ -6,10 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.elearning.models.User;
-import com.elearning.repositories.UserRepository;
 import com.elearning.services.UserService;
 
 @Controller
@@ -36,12 +34,17 @@ public class UserController {
 	public String userLoginPost(Model model, User user){
 		User userDB=userService.findUser(user.getUser_id(),user.getPassword());
 		if(userDB!=null) {
-			model.addAttribute("name",userDB.getName());
-			model.addAttribute("user_id",userDB.getUser_id());
+			
+			model.addAttribute("user",userDB);
 			return "userMain";
 		}else {
 			return "userError";
 		}
+	}
+	@GetMapping("/userMain/{user_id}")
+	public String userMain(Model model, @PathVariable int user_id){
+		model.addAttribute("user",userService.findUser(user_id));
+		return "userMain";
 	}
 	@PostMapping("/userMain/{user_id}/{name}")
 	public String userLoginPostwithParams(Model model,@PathVariable int user_id,@PathVariable String name){

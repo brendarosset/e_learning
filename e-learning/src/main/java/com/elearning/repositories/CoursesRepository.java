@@ -8,7 +8,7 @@ import com.elearning.models.Courses;
 
 public interface CoursesRepository extends JpaRepository<Courses,Integer>{
 
-	List<Courses> findByUserId(int user_id);
+	List<Courses> findByCourseId(int user_id);
 	
 
 }

@@ -6,6 +6,5 @@ import com.elearning.models.Feedback;
 
 
 public interface FeedbackRepository extends JpaRepository<Feedback,Integer>{
-	
 
 }

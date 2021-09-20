@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.elearning.models.Contact;
-import com.elearning.models.User;
 import com.elearning.services.ContactService;
 
 @Controller

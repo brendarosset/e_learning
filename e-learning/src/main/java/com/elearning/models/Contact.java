@@ -82,5 +82,12 @@ public class Contact {
 		public void setMessage(String message) {
 			this.message = message;
 		}
+
+
+		@Override
+		public String toString() {
+			
+			return "ID:"+this.id+" | Sender:"+this.userId+" | Receiver:"+this.name+" | Email:"+this.email+" | Message:"+this.message;
+		}
 		
 }

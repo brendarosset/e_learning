@@ -4,11 +4,12 @@
 		<h1>${name}'s courses:</h1><br>
 		<ul>
 			<c:forEach items="${courses}" var="course">
-		        	<li><c:out value="${course.getName()}"/></li> 
+		        	<li><c:out value="${course.getCourse_name()}"/></li> 
 			</c:forEach>
 
 		</ul>
-		<a href="/addCourse/${user_id}/${name}">Add Course</a>
+		<br>
+		<a href="/searchCourse/${user_id}/${name}">Add Course</a>
 		
 	<body>
 </html>

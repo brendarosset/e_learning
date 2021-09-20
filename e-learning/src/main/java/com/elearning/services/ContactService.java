@@ -22,5 +22,9 @@ public class ContactService {
 	public void addContact(Contact contact) {
 		conRep.save(contact);
 	}
+
+	public List<Contact> findAllContact() {
+		return conRep.findAll();
+	}
 	
 }

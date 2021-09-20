@@ -1,10 +1,8 @@
 package com.elearning.models;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.UniqueConstraint;
+
 
 @Entity //maps this class to the DB table
 //class=table name
@@ -80,6 +78,13 @@ public class User {
 	}
 	public Long getPhone() {
 		return phone;
+	}
+
+
+	@Override
+	public String toString() {
+		
+		return "ID:"+this.user_id+" | Name:"+this.name+" | Adress:"+this.adress+" | Email:"+this.email;
 	}
 	
 	
